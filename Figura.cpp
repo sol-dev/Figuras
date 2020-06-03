@@ -172,14 +172,13 @@ void recorrerLista(Lista& listaFiguras) {
     //insertarArea(listaFiguras);
 
     while (cursor != Fin_Lista()) {
-        cout << ((Figura*)cursor->DatoLista)->forma << " ";
+        cout <<"\t*"<< ((Figura*)cursor->DatoLista)->forma << " ";
         cout << ((Figura*)cursor->DatoLista)->color << " ";
         cout << ((Figura*)cursor->DatoLista)->valor1 << "; ";
         if (((Figura*)cursor->DatoLista)->valor2 > 0) {
             cout << ((Figura*)cursor->DatoLista)->valor2;
         }
-        cout << endl;
-        cout << "Area: " << ((Figura*)cursor->DatoLista)->area << endl;
+        cout << "\n\t\tArea: " << ((Figura*)cursor->DatoLista)->area << endl;
         cursor = cursor->SgteDL;
     }
     delete (cursor);
@@ -230,10 +229,10 @@ void totalPorFigura(Lista& listaFiguras) {
     float sumaAreas = 0;
 
     for (int i = 0; i <= 4; i++) { //Figuras
-        cout << "\tDetalle: "<< figuras[i] << endl;
+        cout << "\t*Detalle: "<< figuras[i] << endl;
         while (cursor != Fin_Lista()) {
             if (((Figura*)cursor->DatoLista)->forma == figuras[i]) {
-                cout << "\t  " << figuras[i] << ", " << ((Figura*)cursor->DatoLista)->color <<", "<<((Figura*)cursor->DatoLista)->area << endl;
+                cout << "\t-" << ((Figura*)cursor->DatoLista)->color <<", "<<((Figura*)cursor->DatoLista)->area << endl;
                 sumaAreas = sumaAreas + ((Figura*)cursor->DatoLista)->area;
             }
             cursor = cursor->SgteDL;
@@ -381,14 +380,14 @@ void colorOrdenFiguras (Lista& listaFiguras){
         if (colores[j] != "") { //Si existe
             auxColor = colores[j];
             auxOrden = 0;
-            cout << "Figuras de color " << auxColor << endl;
+            cout << "\t*Figuras de color " << auxColor << endl;
             cursor = listaFiguras.Primero;
 
             while (cursor != Fin_Lista()){ //imprimo las figuras que coinciden con el color
                 auxOrden++;
                 if (((Figura*)cursor->DatoLista)->color == auxColor) {
                         //auxOrden++;
-                        cout << "\t"<<auxOrden<<") " <<((Figura*)cursor->DatoLista)->forma << " con area: " << ((Figura*)cursor->DatoLista)->area << endl;
+                        cout << "\t\t"<<auxOrden<<") " <<((Figura*)cursor->DatoLista)->forma << " con area: " << ((Figura*)cursor->DatoLista)->area << endl;
                 }
                 cursor = cursor->SgteDL;
             }
