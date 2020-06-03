@@ -185,10 +185,9 @@ void coloresEnListaFiguras(Lista& listaFiguras, string colores[10]);
   Lo que hacemos es crear una listaFigurasAux que vendría a ser lo mismo que la listaFigura pero en diferente lugar de memoria.
   Luego se recorre una serie de whiles donde se ordenan las figuras de mayor a menor. Finalmente se recorre la lista ordenada y se imprime.
 */
-void figurasDescendienteArea(string archivo);
+void ordenDescendenteArea(string archivo);
 
-
-void figurasAscendienteArea(string archivo);
+void ordenAscendenteArea(string archivo);
 
 void colorOrdenFiguras (Lista& listaFiguras);
 

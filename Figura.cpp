@@ -280,14 +280,12 @@ void totalPorFiguraColor(Lista& listaFiguras) {
 }
 
 //Lista de figuras ordenadas de forma descendiente por su area.
-void figurasDescendienteArea(string archivo) {
+void ordenDescendenteArea(string archivo) {
+    //Creo una listaFigurasAux, igual a listaFiguras.
+    Lista listaFigurasAux;          // Lista donde voy a guardar las figuras.
+    CrearLista(listaFigurasAux);    //constructor de la lista
 
-    //Creo una listaFigurasAux, que vendria a ser igual a listaFiguras.
-
-    Lista listaFigurasAux; // Lista donde voy a guardar las figuras.
-    CrearLista(listaFigurasAux);   //constructor de la lista
-
-    ifstream archivo_figuras;
+    ifstream archivo_figuras;       //cargo el txt a la lista
     archivo_figuras.open(archivo, ios::in);
 
     CargarDesdeArchivo(archivo_figuras, listaFigurasAux);
@@ -298,37 +296,25 @@ void figurasDescendienteArea(string archivo) {
     PtrNodoLista cursor1 = listaFigurasAux.Primero;
     PtrNodoLista cursor2;
 
-    float aux = 0;
+    PtrFigura aux=NULL;
 
-    //Se ordenan las figuras segun su area
     while (cursor1 != Fin_Lista()) {
 
         cursor2 = listaFigurasAux.Primero;
         while (cursor2 != Fin_Lista()) {
 
             if (((Figura*)cursor1->DatoLista)->area > ((Figura*)cursor2->DatoLista)->area) { //Aj = area1, Aj+1 = area2
-                aux = ((Figura*)cursor1->DatoLista)->area;
-                ((Figura*)cursor1->DatoLista)->area = ((Figura*)cursor2->DatoLista)->area;
-                ((Figura*)cursor2->DatoLista)->area = aux;
+                aux = (Figura*)cursor1->DatoLista;
+                cursor1->DatoLista = cursor2->DatoLista;
+                cursor2->DatoLista = aux;
              }
             cursor2 = cursor2->SgteDL;
         }
         cursor1 = cursor1->SgteDL;
     }
 
-    //Imprimo la lista ordenada
-    cursor1 = listaFigurasAux.Primero;
-    while (cursor1 != Fin_Lista()) {
-        cout << "\t" << ((Figura*)cursor1->DatoLista)->forma << " ";
-        cout << ((Figura*)cursor1->DatoLista)->color << " ";
-        cout << ((Figura*)cursor1->DatoLista)->valor1 << "; ";
-        if (((Figura*)cursor1->DatoLista)->valor2 > 0) {
-            cout << ((Figura*)cursor1->DatoLista)->valor2;
-        }
-        cout << endl;
-        cout << "\t" << ((Figura*)cursor1->DatoLista)->area << endl;
-        cursor1 = cursor1->SgteDL;
-    }
+
+    recorrerLista(listaFigurasAux);
 
     cursor1 = nullptr;
     delete (cursor1);
@@ -338,7 +324,7 @@ void figurasDescendienteArea(string archivo) {
 
 
 //Lista de figuras ordenadas de forma ascendente por su area.
-void figurasAscendienteArea(string archivo) {
+void ordenAscendenteArea(string archivo) {
 
     //Creo una listaFigurasAux, que vendria a ser igual a listaFiguras.
 
@@ -356,37 +342,25 @@ void figurasAscendienteArea(string archivo) {
     PtrNodoLista cursor1 = listaFigurasAux.Primero;
     PtrNodoLista cursor2;
 
-    float aux = 0;
+    PtrFigura aux=NULL;
 
-    //Se ordenan las figuras segun su area
     while (cursor1 != Fin_Lista()) {
 
         cursor2 = listaFigurasAux.Primero;
         while (cursor2 != Fin_Lista()) {
 
             if (((Figura*)cursor1->DatoLista)->area < ((Figura*)cursor2->DatoLista)->area) { //Aj = area1, Aj+1 = area2
-                aux = ((Figura*)cursor1->DatoLista)->area;
-                ((Figura*)cursor1->DatoLista)->area = ((Figura*)cursor2->DatoLista)->area;
-                ((Figura*)cursor2->DatoLista)->area = aux;
+                aux = (Figura*)cursor1->DatoLista;
+                cursor1->DatoLista = cursor2->DatoLista;
+                cursor2->DatoLista = aux;
              }
             cursor2 = cursor2->SgteDL;
         }
         cursor1 = cursor1->SgteDL;
     }
 
-    //Imprimo la lista ordenada
-    cursor1 = listaFigurasAux.Primero;
-    while (cursor1 != Fin_Lista()) {
-        cout << "\t" << ((Figura*)cursor1->DatoLista)->forma << " ";
-        cout << ((Figura*)cursor1->DatoLista)->color << " ";
-        cout << ((Figura*)cursor1->DatoLista)->valor1 << "; ";
-        if (((Figura*)cursor1->DatoLista)->valor2 > 0) {
-            cout << ((Figura*)cursor1->DatoLista)->valor2;
-        }
-        cout << endl;
-        cout << "\t" << ((Figura*)cursor1->DatoLista)->area << endl;
-        cursor1 = cursor1->SgteDL;
-    }
+
+    recorrerLista(listaFigurasAux);
 
     cursor1 = nullptr;
     delete (cursor1);

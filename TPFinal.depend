@@ -38,7 +38,7 @@
 	"Lista.h"
 	"Figura.h"
 
-1591161900 source:c:\users\user\desktop\unla\4.2 algoritmos y estructuras de datos\tp final\ultima version\carpeta para proyecto\tpfinal\main.cpp
+1591169741 source:c:\users\user\desktop\unla\4.2 algoritmos y estructuras de datos\tp final\ultima version\carpeta para proyecto\tpfinal\main.cpp
 	<cmath>
 	<iostream>
 	<fstream>
@@ -55,14 +55,14 @@
 	<string>
 	<sstream>
 
-1591163175 c:\users\user\desktop\unla\4.2 algoritmos y estructuras de datos\tp final\ultima version\carpeta para proyecto\tpfinal\figura.h
+1591169677 c:\users\user\desktop\unla\4.2 algoritmos y estructuras de datos\tp final\ultima version\carpeta para proyecto\tpfinal\figura.h
 	<iostream>
 	<fstream>
 	<string>
 	<sstream>
 	"Lista.h"
 
-1591163175 source:c:\users\user\desktop\unla\4.2 algoritmos y estructuras de datos\tp final\ultima version\carpeta para proyecto\tpfinal\figura.cpp
+1591169592 source:c:\users\user\desktop\unla\4.2 algoritmos y estructuras de datos\tp final\ultima version\carpeta para proyecto\tpfinal\figura.cpp
 	"Figura.h"
 	"Lista.h"
 	<iostream>

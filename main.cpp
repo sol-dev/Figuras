@@ -53,6 +53,7 @@ int main(int argc, char** argv) {
         cout << "\t4.Totales por Figura-Color" << endl;
         cout << "\t5.De cada color, mostrar el orden de produccion"<< endl;
         cout << "\t6.Figuras ordenadas por area(descendente)" << endl;
+        cout << "\t7.Figuras ordenadas por area(ascendente)" << endl;
         cout << "\t0.Salir" << endl;
         cin >> opcion;
 
@@ -77,12 +78,15 @@ int main(int argc, char** argv) {
                 colorOrdenFiguras(listaFiguras);
                 break;}
             case 6:{
-
-                recorrerLista(listaFiguras);
-
-                cout <<"Listado de figuras ordenadas por su area(orden descendiente)" << endl;
+                cout <<"Listado de figuras ordenadas por su area(orden descendente)" << endl;
                 string archivo = "archivotest.txt";
-                figurasDescendienteArea(archivo);
+                ordenDescendenteArea(archivo);
+                archivo_figuras.close();
+                break;}
+            case 7:{
+                cout <<"Listado de figuras ordenadas por su area(orden ascendente)" << endl;
+                string archivo = "archivotest.txt";
+                ordenAscendenteArea(archivo);
                 archivo_figuras.close();
                 break;}
             case 0:{
